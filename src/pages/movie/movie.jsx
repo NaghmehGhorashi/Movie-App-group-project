@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/navbar/navbar';
 import Wrapper from '../../components/container/container';
-import style from './Movie.module.css';
+import style from './movie.module.css';
 import { MoviesContext } from '../../context/MoviesContext';
 
 function Movie() {
