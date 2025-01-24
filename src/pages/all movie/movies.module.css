@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+}
+
+.wrapper {
+
+    margin: 10px;
+    height: 500px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+    width: 100%;
+
+}
+
+.articles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 45px;
+
+    justify-content: space-between;
+    -webkit-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
+    -moz-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
+    box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
+
+    a {
+        width: 23%;
+    }
+}
+
+.title {
+    margin-top: 20px;
+}
+
+.deleteButton {
+    width: 100%;
+    border-radius: 3px;
+    background-color: #352034bf;
+    border: none;
+    color: azure;
+    height: 30px;
+    margin-top: 5px;
+}

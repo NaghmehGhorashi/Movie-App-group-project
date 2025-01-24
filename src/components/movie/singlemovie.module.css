@@ -1,0 +1,39 @@
+.movie {
+    height: 240px;
+    width: 150px;
+    background-color: rgba(101, 59, 112, 0.535);
+    border-radius: 7px;
+    position: relative;
+    padding: 20px;
+
+}
+
+.img {
+    height: 240px;
+    width: 150px;
+    border-radius: 7px;
+}
+
+
+.title {
+    position: absolute;
+    bottom: 0px;
+    border-radius: 7px;
+    backdrop-filter: blur(15px);
+    color: azure;
+    width: 150px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.h {
+
+
+    font-weight: lighter;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
