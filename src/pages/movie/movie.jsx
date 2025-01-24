@@ -96,6 +96,15 @@ function Movie() {
                         ) : (
                             <div className={style.placeholder}>Loading...</div>
                         )}
+                        {article && (
+                            <div className={style.casts}>
+                                {article.casts.slice(0, 5).map((cast) => (
+                                    <div key={cast.id} className={style.cast}>
+                                        <img src={cast.profile_path} alt={cast.name} />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

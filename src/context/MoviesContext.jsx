@@ -32,7 +32,7 @@ export const MoviesProvider = ({ children }) => {
     setMovies(updatedMovies);
   };
 
-
+  // handleAdd for add
 
   return (
     <MoviesContext.Provider value={{ movies, loading, handleDelete, handleEdit }}>
