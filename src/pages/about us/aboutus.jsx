@@ -4,6 +4,8 @@ import Wrapper from '../../components/container/container'
 import style from "./aboutus.module.css"
 import hannaImage from '../../assets/hanna.jpeg'
 import naghmehImage from '../../assets/naghmeh.jpeg'
+import raanaImage from '../../assets/raana.jpeg'
+import sixtenImage from '../../assets/sixten.jpeg'
 function Aboutus() {
     
     return (
@@ -11,26 +13,26 @@ function Aboutus() {
             <Wrapper>
                 <div>
                     <Navbar />
-                    <h1>About</h1>
+                    <h1>About Us</h1>
                     {/* Profile Section */}
-                    <section class="profile-section">
-                        <div class="profile">
+                    <section className={style.profileSection}>
+                        <div className={style.profile}>
                             <img src = {hannaImage} alt="Profile 1"/>
                             <p>Hanna</p>
                         </div>
                         
-                            <div class="profile">
+                            <div className={style.profile}>
                             <img src={naghmehImage} alt="Profile 2"/>
-                            <p>Nghmeh</p>
+                            <p>Naghmeh</p>
                         </div>
 
-                        <div class="profile">
-                            <img src="https://via.placeholder.com/100" alt="Profile 3"/>
-                            <p>Profile 3</p>
+                        <div className={style.profile}>
+                            <img src={raanaImage} alt="Profile 3"/>
+                            <p>Raana</p>
                         </div>
-                        <div class="profile">
-                            {/* <img src="https://via.placeholder.com/100" alt="Profile 4"> */}
-                            <p>Profile 4</p>
+                        <div className={style.profile}>
+                            <img src={sixtenImage} alt="Profile 4"/> 
+                            <p>Sixten</p>
                         </div>
                     </section>
                     <div className={style.about}>

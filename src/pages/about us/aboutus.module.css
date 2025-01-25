@@ -1,0 +1,49 @@
+
+
+/* Profile Section */
+.profileSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.profile {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.profile img {
+    width: 90px;  /* rectangle width */
+    height: 120px;  /* rectangle height */
+    border-radius: 0;  /* remove rounding to create rectangle */
+    border: 2px solid white;
+    transition: transform 0.3s;
+}
+
+.profile p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.profile:hover {
+    transform: translateY(-10px);
+}
+
+.profile img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile img {
+        width: 70px;  /* rectangle width on mobile */
+        height: 100px;  /* rectangle height on mobile */
+    }
+}
