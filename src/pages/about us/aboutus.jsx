@@ -1,49 +1,50 @@
-import React from 'react'
-import Navbar from '../../components/navbar/navbar'
-import Wrapper from '../../components/container/container'
-import style from "./aboutus.module.css"
-import hannaImage from '../../assets/hanna.jpeg'
-import naghmehImage from '../../assets/naghmeh.jpeg'
-import raanaImage from '../../assets/raana.jpeg'
-import sixtenImage from '../../assets/sixten.jpeg'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Navbar from '../../components/navbar/navbar';
+import Wrapper from '../../components/container/container';
+import style from "./aboutus.module.css";
+import hannaImage from '../../assets/hanna.jpeg';
+import naghmehImage from '../../assets/naghmeh.jpeg';
+import raanaImage from '../../assets/raana.jpeg';
+import sixtenImage from '../../assets/sixten.jpeg';
+
+const profiles = [
+  { name: 'Hanna', image: hannaImage },
+  { name: 'Naghmeh', image: naghmehImage },
+  { name: 'Raana', image: raanaImage },
+  { name: 'Sixten', image: sixtenImage },
+];
+
+const Profile = ({ name, image }) => (
+  <div className={style.profile}>
+    <img src={image} alt={`${name}'s profile`} />
+    <p>{name}</p>
+  </div>
+);
+
+Profile.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
+
 function Aboutus() {
-    
-    return (
+  return (
+    <div>
+      <Wrapper>
         <div>
-            <Wrapper>
-                <div>
-                    <Navbar />
-                    <h1>About Us</h1>
-                    {/* Profile Section */}
-                    <section className={style.profileSection}>
-                        <div className={style.profile}>
-                            <img src = {hannaImage} alt="Profile 1"/>
-                            <p>Hanna</p>
-                        </div>
-                        
-                            <div className={style.profile}>
-                            <img src={naghmehImage} alt="Profile 2"/>
-                            <p>Naghmeh</p>
-                        </div>
-
-                        <div className={style.profile}>
-                            <img src={raanaImage} alt="Profile 3"/>
-                            <p>Raana</p>
-                        </div>
-                        <div className={style.profile}>
-                            <img src={sixtenImage} alt="Profile 4"/> 
-                            <p>Sixten</p>
-                        </div>
-                    </section>
-                    <div className={style.about}>
-
-                    </div>
-
-
-                </div>
-            </Wrapper>
+          <Navbar />
+          <section className={style.profileSection}>
+            {profiles.map(({ name, image }) => (
+              <Profile key={name} name={name} image={image} />
+            ))}
+          </section>
+          <div className={style.about}>
+            <p>We are a team of four developers who founded a company to create innovative applications. Our flagship project is a Movie Application that allows users to explore, search, and save their favorite movies with ease. We focus on delivering a seamless user experience by combining cutting-edge technologies and creative design. Collaboration and passion for movies drive our team to constantly improve and expand our platform. Together, we aim to revolutionize the way people interact with movie content.</p>
+          </div>
         </div>
-    )
+      </Wrapper>
+    </div>
+  );
 }
 
-export default Aboutus
+export default Aboutus;
