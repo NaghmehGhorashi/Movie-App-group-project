@@ -39,7 +39,8 @@ function Aboutus() {
             ))}
           </section>
           <div className={style.about}>
-            <p>We are a team of four developers who founded a company to create innovative applications. Our flagship project is a Movie Application that allows users to explore, search, and save their favorite movies with ease. We focus on delivering a seamless user experience by combining cutting-edge technologies and creative design. Collaboration and passion for movies drive our team to constantly improve and expand our platform. Together, we aim to revolutionize the way people interact with movie content.</p>
+            <p>About Our Team : </p>
+            <p>We are a team of four passionate developers who joined forces to create a powerful CRUD application focused on movies and films. Our platform allows users to create, update, and manage their favorite movie lists seamlessly. With a dedication to innovation and user-friendly design, we aim to provide a smooth and engaging experience for all movie enthusiasts. Our mission is to make exploring and managing movie data as enjoyable as watching the films themselves. Together, we strive to bring technology and entertainment closer than ever.</p>
           </div>
         </div>
       </Wrapper>
