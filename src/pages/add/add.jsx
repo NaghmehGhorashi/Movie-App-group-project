@@ -1,38 +1,122 @@
-import React from 'react'
-import Navbar from '../../components/navbar/navbar'
-import Wrapper from '../../components/container/container'
-import style from "./add.module.css"
+import { useContext, useState, useEffect } from "react";
+import Navbar from "../../components/navbar/navbar";
+import Wrapper from "../../components/container/container";
+import style from "./add.module.css";
+import styled from "./add.module.css";
+
+import { MoviesContext } from "../../context/MoviesContext";
 
 function Add() {
+	const getDate = () => {
+		const date = new Date();
+		const day = date.getDate();
+		const month = date.getMonth() + 1;
+		const year = date.getFullYear();
+		const today = `${month}/${day}/${year}`;
+		return today;
+	};
+	const { movies, handleAdd } = useContext(MoviesContext);
 
+	const [movieData, setMovieData] = useState({
+		original_title: "",
+		overview: "",
+		release_date: getDate(),
+		rate: "",
+	});
 
-    {/* write ur code here */ }
-    return (
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setMovieData({ ...movieData, [name]: value });
+	};
 
-        <div>
-            <Wrapper>
-                <div className={style.add}>
-                    <Navbar />
-                    add
-                    {/* write ur code here */}
+	useEffect(() => {
+		console.log(movies);
+	}, [movies]);
 
+	const addMovie = (movieData) => {
+		if (
+			!movieData.original_title ||
+			!movieData.overview ||
+			!movieData.release_date ||
+			!movieData.vote_average
+		) {
+			alert("Please fill in all the required fields");
+			return;
+		}
 
+		const newMovie = {
+			id: movies.length + 101,
+			original_title: movieData.original_title,
+			overview: movieData.overview,
+			release_date: movieData.release_date,
+			vote_average: movieData.vote_average,
+		};
+		console.log(newMovie);
+		handleAdd(newMovie);
+	};
 
-                </div>
-            </Wrapper>
-        </div>
-
-    )
+	return (
+		<div>
+			<Wrapper>
+				<div className={style.add}>
+					<Navbar />
+					{/* write ur code here */}
+					<div className={styled.container}>
+						<div className={styled.wrapper}>
+							<h1>Add new movie</h1>
+							<form action="">
+								<p>Title</p>
+								<input
+									type="text"
+									name="original_title"
+									value={movieData.original_title}
+									onChange={handleChange}
+								/>
+								<p>Description</p>
+								<input
+									type="text"
+									name="overview"
+									value={movieData.overview}
+									onChange={handleChange}
+								/>
+								<p>Release date</p>
+								<input
+									type="date"
+                                    name="release_date"
+									value={movieData.release_date}
+									onChange={handleChange}
+								/>
+								<p>Rating</p>
+								<input
+									type="number"
+									min={1}
+									max={10}
+									name="vote_average"
+									value={movieData.vote_average}
+									onChange={handleChange}
+								/>
+								<br />
+								<button
+									type="button"
+									aria-label="Add"
+									tabIndex={0}
+									onClick={() => addMovie(movieData)}
+								>
+									Add
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</Wrapper>
+		</div>
+	);
 }
 
-export default Add
+export default Add;
 
-
-
-{/* When you want to create the submit button, use : <<aria-label="Add">> and <<tabIndex="0" >> */ }
-// Since we are using useContext,
-//  you should define the addhandle function inside the context.
-//   Then, you can call it from your component using the context. 
-//   This approach helps centralize logic, makes the code cleaner, 
-//   and avoids passing props unnecessarily. 
-//  
+// When you want to create the submit button, use : <<aria-label="Add">> and <<tabIndex="0" >>
+// Since we are using useContext, you should define the addhandle function inside the context.
+// Then, you can call it from your component using the context.
+// This approach helps centralize logic, makes the code cleaner, and avoids passing props unnecessarily.
+//
