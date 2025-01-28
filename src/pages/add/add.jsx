@@ -12,8 +12,15 @@ function Add() {
 		const day = date.getDate();
 		const month = date.getMonth() + 1;
 		const year = date.getFullYear();
-		const today = `${month}/${day}/${year}`;
-		return today;
+		if(month < 10){
+			const today = `${year}-0${month}-${day}`;
+			console.log(today)
+			return today;
+		} else {
+			const today = `${year}-${month}-${day}`
+			console.log(today)
+			return today;
+		}
 	};
 	const { movies, handleAdd } = useContext(MoviesContext);
 
@@ -21,7 +28,7 @@ function Add() {
 		original_title: "",
 		overview: "",
 		release_date: getDate(),
-		rate: "",
+		vote_average: "",
 	});
 
 	const handleChange = (e) => {
@@ -33,7 +40,9 @@ function Add() {
 		console.log(movies);
 	}, [movies]);
 
-	const addMovie = (movieData) => {
+	const addMovie = (event, movieData) => {
+		event.preventDefault();
+
 		if (
 			!movieData.original_title ||
 			!movieData.overview ||
@@ -53,6 +62,13 @@ function Add() {
 		};
 		console.log(newMovie);
 		handleAdd(newMovie);
+
+		setMovieData({
+			original_title: "",
+			overview: "",
+			release_date: getDate(),
+			vote_average: 0,
+		});
 	};
 
 	return (
@@ -63,7 +79,7 @@ function Add() {
 					{/* write ur code here */}
 					<div className={styled.container}>
 						<div className={styled.wrapper}>
-							<form action="">
+							<form action="" onSubmit={() => addMovie(event, movieData)}>
 								<p>Title</p>
 								<input
 									type="text"
@@ -81,7 +97,7 @@ function Add() {
 								<p>Release date</p>
 								<input
 									type="date"
-                                    name="release_date"
+									name="release_date"
 									value={movieData.release_date}
 									onChange={handleChange}
 								/>
@@ -95,12 +111,7 @@ function Add() {
 									onChange={handleChange}
 								/>
 								<br />
-								<button
-									type="button"
-									aria-label="Add"
-									tabIndex={0}
-									onClick={() => addMovie(movieData)}
-								>
+								<button type="submit" aria-label="Add" tabIndex={0}>
 									Add
 								</button>
 							</form>
