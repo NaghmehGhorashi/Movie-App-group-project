@@ -63,7 +63,6 @@ function Add() {
 					{/* write ur code here */}
 					<div className={styled.container}>
 						<div className={styled.wrapper}>
-							<h1>Add new movie</h1>
 							<form action="">
 								<p>Title</p>
 								<input
