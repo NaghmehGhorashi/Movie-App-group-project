@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Routes, Route } from 'react-router-dom';
 import { MoviesProvider } from './context/MoviesContext';
 import Home from './pages/home/home';

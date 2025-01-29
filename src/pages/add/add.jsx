@@ -74,50 +74,54 @@ function Add() {
 	return (
 		<div>
 			<Wrapper>
-				<div className={style.add}>
-					<Navbar />
-					{/* write ur code here */}
-					<div className={styled.container}>
-						<div className={styled.wrapper}>
-							<form action="" onSubmit={() => addMovie(event, movieData)}>
-								<p>Title</p>
-								<input
-									type="text"
-									name="original_title"
-									value={movieData.original_title}
-									onChange={handleChange}
-								/>
-								<p>Description</p>
-								<input
-									type="text"
-									name="overview"
-									value={movieData.overview}
-									onChange={handleChange}
-								/>
-								<p>Release date</p>
-								<input
-									type="date"
-									name="release_date"
-									value={movieData.release_date}
-									onChange={handleChange}
-								/>
-								<p>Rating</p>
-								<input
-									type="number"
-									min={1}
-									max={10}
-									name="vote_average"
-									value={movieData.vote_average}
-									onChange={handleChange}
-								/>
-								<br />
-								<button type="submit" aria-label="Add" tabIndex={0}>
-									Add
-								</button>
-							</form>
-						</div>
-					</div>
-				</div>
+<div className={style.add}>
+<Navbar />
+{/* write ur code here */}
+<div className={styled.container}>
+<div className={styled.wrapper}>
+	<h1>Add new movie</h1>
+	<form action="" onSubmit={() => addMovie(event, movieData)}>
+		<h2>Title</h2>
+		<input
+			type="text"
+			name="original_title"
+			value={movieData.original_title}
+			onChange={handleChange}
+			className={style.textInput}
+		/>
+		<h2>Description</h2>
+		<textarea
+
+			type="text"
+			name="overview"
+			value={movieData.overview}
+			onChange={handleChange}
+			className={style.textInput}
+		/>
+		<h2>Release date</h2>
+		<input
+			type="date"
+			name="release_date"
+			value={movieData.release_date}
+			onChange={handleChange}
+		/>
+		<h2>Rating</h2>
+		<input
+			type="number"
+			min={1}
+			max={10}
+			name="vote_average"
+			value={movieData.vote_average}
+			onChange={handleChange}
+		/>
+		<br />
+		<button className={style.submitButton} type="submit" aria-label="Add" tabIndex={0}>
+			Submit
+		</button>
+	</form>
+</div>
+</div>
+</div>
 			</Wrapper>
 		</div>
 	);

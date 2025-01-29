@@ -1,56 +1,104 @@
 .add {
-    padding: 0px;
+	padding: 0px;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .wrapper {
+	margin: 10px;
+	height: 500px;
 
-    margin: 10px;
-    height: 500px;
+	overflow-y: auto;
 
-    overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
 
-    overflow-x: hidden;
-    width: 100%;
-
+	text-align: center;
 }
 
 .articles {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 45px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: 45px;
 
-    justify-content: space-between;
-    /* -webkit-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
+	justify-content: space-between;
+	/* -webkit-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
     -moz-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
     box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1); */
 
-    a {
-        width: 23%;
-    }
+	a {
+		width: 23%;
+	}
 }
 
 .title {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .addButton {
-    width: 100%;
-    border-radius: 3px;
-    background-color: #352034bf;
-    border: none;
-    color: azure;
-    height: 30px;
-    margin-top: 5px;
+	width: 100%;
+	border-radius: 3px;
+	background-color: #352034bf;
+	border: none;
+	color: azure;
+	height: 30px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+form {
+	margin-inline: auto;
+	max-width: min-content;
+    text-align: start;
+}
+
+h1 {
+	font-weight: 400;
+	font-size: 1.7rem;
+}
+
+h2 {
+	font-size: 1.3rem;
+	color: whitesmoke;
+	font-weight: 300;
+}
+
+input {
+	border: solid 2px black;
+	font-size: 1rem;
+	margin-bottom: 5px;
+	padding: 3px;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
+textarea {
+	border: solid 2px black;
+	max-width: 100%;
+	resize: vertical;
+	padding: 3px;
+	min-height: 20px;
+}
+
+.submitButton {
+	display: block;
+	background-color: #fea2f8bf;
+	color: white;
+	text-align: center;
+    font-size: 1.2rem;
+	text-decoration: none;
+	border-radius: 5px;
+    border-style: none;
     cursor: pointer;
+    padding: 10px 40px;
+    margin: 5px auto;
 }
