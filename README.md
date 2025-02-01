@@ -1,7 +1,7 @@
 # React + Vite
-1.clone the repo
-2.in termenal write:    npm install 
-3.for the running the project write :    npm run dev
+-1.clone the repo
+-2.in termenal write:    npm install 
+-3.for the running the project write : npm run dev
 
 - Hanna Carlson : Css for single movie Page,respansive for all pages.
 - Naghmeh Ghorashi : route,fetch API,all movies page,single movie page.
