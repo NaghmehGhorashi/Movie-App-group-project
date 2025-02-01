@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from '../../components/navbar/navbar'
 import Wrapper from "../../components/container/container"
 import style from "./home.module.css"

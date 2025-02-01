@@ -1,35 +1,132 @@
-import React from 'react'
-import Navbar from '../../components/navbar/navbar'
-import Wrapper from '../../components/container/container'
-import style from "./add.module.css"
+import { useContext, useState, useEffect } from "react";
+import Navbar from "../../components/navbar/navbar";
+import Wrapper from "../../components/container/container";
+import style from "./add.module.css";
+import styled from "./add.module.css";
+
+import { MoviesContext } from "../../context/MoviesContext";
 
 function Add() {
-    return (
+	const getDate = () => {
+		const date = new Date();
+		const day = date.getDate();
+		const month = date.getMonth() + 1;
+		const year = date.getFullYear();
+		if(month < 10){
+			const today = `${year}-0${month}-${day}`;
+			console.log(today)
+			return today;
+		} else {
+			const today = `${year}-${month}-${day}`
+			console.log(today)
+			return today;
+		}
+	};
+	const { movies, handleAdd } = useContext(MoviesContext);
 
-        <div>
-            <Wrapper>
-                <div className={style.add}>
-                    <Navbar />
-                    add
-                    {/* write ur code here */}
+	const [movieData, setMovieData] = useState({
+		original_title: "",
+		overview: "",
+		release_date: getDate(),
+		vote_average: "",
+	});
 
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setMovieData({ ...movieData, [name]: value });
+	};
 
+	useEffect(() => {
+		console.log(movies);
+	}, [movies]);
 
-                </div>
-            </Wrapper>
-        </div>
+	const addMovie = (event, movieData) => {
+		event.preventDefault();
 
-    )
+		if (
+			!movieData.original_title ||
+			!movieData.overview ||
+			!movieData.release_date ||
+			!movieData.vote_average
+		) {
+			alert("Please fill in all the required fields");
+			return;
+		}
+
+		const newMovie = {
+			id: movies.length + 101,
+			original_title: movieData.original_title,
+			overview: movieData.overview,
+			release_date: movieData.release_date,
+			vote_average: movieData.vote_average,
+		};
+		console.log(newMovie);
+		handleAdd(newMovie);
+
+		setMovieData({
+			original_title: "",
+			overview: "",
+			release_date: getDate(),
+			vote_average: 0,
+		});
+	};
+
+	return (
+		<div>
+			<Wrapper>
+				<div className={style.add}>
+					<Navbar />
+					{/* write ur code here */}
+					<div className={styled.container}>
+						<div className={styled.wrapper}>
+							<form action="" onSubmit={() => addMovie(event, movieData)}>
+								<p>Title</p>
+								<input
+									type="text"
+									name="original_title"
+									value={movieData.original_title}
+									onChange={handleChange}
+								/>
+								<p>Description</p>
+								<input
+									type="text"
+									name="overview"
+									value={movieData.overview}
+									onChange={handleChange}
+								/>
+								<p>Release date</p>
+								<input
+									type="date"
+									name="release_date"
+									value={movieData.release_date}
+									onChange={handleChange}
+								/>
+								<p>Rating</p>
+								<input
+									type="number"
+									min={1}
+									max={10}
+									name="vote_average"
+									value={movieData.vote_average}
+									onChange={handleChange}
+								/>
+								<br />
+								<button type="submit" aria-label="Add" tabIndex={0}>
+									Add
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</Wrapper>
+		</div>
+	);
 }
 
-export default Add
+export default Add;
 
-
-
-{/* When you want to create the submit button, use : <<aria-label="Add">> and <<tabIndex="0" >> */ }
-// Since we are using useContext,
-//  you should define the add function inside the context.
-//   Then, you can call it from your component using the context. 
-//   This approach helps centralize logic, makes the code cleaner, 
-//   and avoids passing props unnecessarily. 
-//   example:<button onClick={handleAdd}>Add Item</button>
+// When you want to create the submit button, use : <<aria-label="Add">> and <<tabIndex="0" >>
+// Since we are using useContext, you should define the addhandle function inside the context.
+// Then, you can call it from your component using the context.
+// This approach helps centralize logic, makes the code cleaner, and avoids passing props unnecessarily.
+//

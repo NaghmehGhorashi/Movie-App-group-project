@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/navbar/navbar';
 import Wrapper from '../../components/container/container';
@@ -96,15 +96,19 @@ function Movie() {
                         ) : (
                             <div className={style.placeholder}>Loading...</div>
                         )}
-                        {article && (
-                            <div className={style.casts}>
-                                {article.casts.slice(0, 5).map((cast) => (
-                                    <div key={cast.id} className={style.cast}>
-                                        <img src={cast.profile_path} alt={cast.name} />
-                                    </div>
-                                ))}
-                            </div>
-                        )}
+                      {article && article.casts && article.casts.length > 0 ? (
+    <div className={style.casts}>
+        {article.casts.slice(0, 5).map((cast) => (
+            <div key={cast.id} className={style.cast}>
+                <img src={cast.profile_path} alt={cast.name} />
+            </div>
+        ))}
+    </div>
+) : (
+    <p>There is no photo for cast</p>
+)}
+
+                   
                     </div>
                 </div>
             </div>
