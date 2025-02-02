@@ -4,65 +4,73 @@
 	--text-color: #000000;
 	--background-color: #ffffff;
 	--transition-speed: 0.3s;
-  }
-  
-  body {
+}
+
+body {
 	font-family: 'Arial', sans-serif;
 	background-color: var(--background-color);
 	color: var(--text-color);
 	line-height: 1.6;
 	transition: background-color var(--transition-speed) ease;
-  }
-  
-  .container {
+}
+
+h3,
+h2 {
+	font-weight: 200;
+	color: #250f2d;
+}
+
+.container {
 	max-width: 800px;
 	margin: 20px auto;
 	padding: 10px;
 	transition: all var(--transition-speed) ease;
-  }
-  
-  .wrapper {
+}
+
+.wrapper {
 	border-radius: 8px;
 	-webkit-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
 	-moz-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
 	box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
 	transition: all var(--transition-speed) ease;
 	padding: 15px;
-  }
-  
-  .articles {
+
+}
+
+.articles {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 20px;
 	justify-content: space-between;
 	padding: 10px;
-  }
-  
-  .articles a {
+}
+
+.articles a {
 	width: calc(50% - 10px);
 	background-color: #f9f9f9;
 	border-radius: 8px;
 	padding: 15px;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	transition: all var(--transition-speed) ease;
 	text-decoration: none;
 	color: var(--text-color);
 	box-sizing: border-box;
-  }
-  
-  .articles a:hover {
+}
+
+.articles a:hover {
 	transform: translateY(-5px);
-	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  
-  .title {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title {
 	margin-top: 15px;
 	text-align: center;
 	font-size: 1.5rem;
 	transition: font-size var(--transition-speed) ease;
-  }
-  
-  .addButton {
+
+}
+
+.addButton {
 	width: 100%;
 	background-color: var(--primary-color);
 	border: none;
@@ -72,32 +80,42 @@
 	cursor: pointer;
 	transition: all var(--transition-speed) ease;
 	border-radius: 4px;
-  }
-  
-  .addButton:hover {
+}
+
+.addButton:hover {
 	background-color: var(--secondary-color);
-  }
-  
-  form {
+}
+
+form {
 	margin-top: 15px;
 	transition: margin var(--transition-speed) ease;
-  }
-  
-  input, textarea {
-	width: 100%;
+}
+
+input,
+textarea {
+	width: 90%;
 	padding: 8px;
 	margin-bottom: 8px;
+	margin-left: 40px;
 	border: 1px solid #ddd;
 	transition: all var(--transition-speed) ease;
 	border-radius: 4px;
-  }
-  
-  input:focus, textarea:focus {
+
+
+}
+
+textarea {
+	height: 70px;
+}
+
+
+input:focus,
+textarea:focus {
 	border-color: var(--secondary-color);
 	box-shadow: 0 0 5px rgba(254, 162, 248, 0.5);
-  }
-  
-  .submitButton {
+}
+
+.submitButton {
 	background-color: var(--secondary-color);
 	color: white;
 	border: none;
@@ -105,46 +123,60 @@
 	cursor: pointer;
 	transition: all var(--transition-speed) ease;
 	border-radius: 4px;
-  }
-  
-  .submitButton:hover {
+	margin-right: 20px;
+}
+
+.submitContainer {
+	display: flex;
+	justify-content: flex-end;
+
+}
+
+
+.submitButton:hover {
 	background-color: var(--primary-color);
-  }
-  
-  @media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
 	.container {
-	  margin: 10px auto;
-	  padding: 5px;
+		margin: 10px auto;
+		padding: 5px;
 	}
-  
+
 	.wrapper {
-	  padding: 10px;
+		padding: 10px;
 	}
-  
+
 	.articles a {
-	  width: 100%;
+		width: 100%;
 	}
-  
+
 	.title {
-	  font-size: 1.2rem;
+		font-size: 1.2rem;
 	}
-  
-	input, textarea, .addButton, .submitButton {
-	  font-size: 14px;
+
+	input,
+	textarea,
+	.addButton,
+	.submitButton {
+		font-size: 14px;
 	}
-  
-	.addButton, .submitButton {
-	  padding: 8px 15px;
+
+	.addButton,
+	.submitButton {
+		padding: 8px 15px;
 	}
-  }
-  
-  @media (max-width: 400px) {
+}
+
+@media (max-width: 400px) {
 	.title {
-	  font-size: 1rem;
+		font-size: 1rem;
 	}
-  
-	input, textarea, .addButton, .submitButton {
-	  font-size: 12px;
+
+	input,
+	textarea,
+	.addButton,
+	.submitButton {
+		font-size: 12px;
 	}
-  }
-  
+}
