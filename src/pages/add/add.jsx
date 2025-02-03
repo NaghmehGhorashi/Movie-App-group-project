@@ -81,7 +81,7 @@ function Add() {
 <div className={styled.wrapper}>
 	<h2>Add New Movie</h2>
 	<form action="" onSubmit={() => addMovie(event, movieData)}>
-		<h3>Title :</h3>
+		<h3>Title</h3>
 		<input
 			type="text"
 			name="original_title"
@@ -90,14 +90,14 @@ function Add() {
 			className={style.textInput}
 		/>
 		
-		<h3>Release Date:</h3>
+		<h3>Release Date</h3>
 		<input
 			type="date"
 			name="release_date"
 			value={movieData.release_date}
 			onChange={handleChange}
 		/>
-		<h3>Rating :</h3>
+		<h3>Rating</h3>
 		<input
 			type="number"
 			min={1}
@@ -106,7 +106,7 @@ function Add() {
 			value={movieData.vote_average}
 			onChange={handleChange}
 		/>
-		<h3>Description :</h3>
+		<h3>Description</h3>
 		<textarea
 
 			type="text"
