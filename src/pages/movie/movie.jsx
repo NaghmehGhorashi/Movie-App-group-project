@@ -40,7 +40,7 @@ function Movie() {
         <Wrapper>
             <div>
                 <Navbar />
-                <div className="container">
+                <div className={style.container}>
                     <div className={style.article}>
                         
                         {article ? (
