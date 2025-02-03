@@ -42,11 +42,13 @@ function Movie() {
                 <Navbar />
                 <div className="container">
                     <div className={style.article}>
+                        
                         {article ? (
                             <>
                                 <div className={style.poster_path}>
                                     <img src={article.poster_path} alt="poster_path" />
-                                </div>
+                                </div> 
+                           
                                 {!isEditing ? (
                                     <div className={style.description}>
                                         <div>

@@ -21,16 +21,19 @@
     -webkit-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
     -moz-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
     box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
-    margin: 10px 10px 10px 10px;
-    height: 525px;
-    padding: 20px;  
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 20px;
+    height: 450px;
+
 }
 
-.article > div:first-child {
+.article>div:first-child {
     width: 100%;
     max-width: 300px;
     margin-bottom: 20px;
-  }
+}
 
 .article img {
     max-width: 100%;
@@ -55,13 +58,7 @@
     margin: 20px;
     padding: 20px; 
     border-radius: 8px;
-    text-align: center; 
-    overflow-y: scroll; 
-    scrollbar-width: thin; 
-    scrollbar-color: #fea2f8bf #ffffff; 
-    -webkit-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
-    -moz-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
-    box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 0.62);
+
     transition: all 0.3s ease;
 }
 
@@ -87,15 +84,16 @@
     cursor: pointer;
     margin: 5px;
 }
-  
+
 .button:hover {
     background-color: #b961b3bf;
 }
 
-.description input,
-.description textarea {
-    width: 80%; 
-    max-width: 500px; 
+
+.input,
+.textarea {
+    width: 100%;
+
     padding: 10px;
     margin: 10px 0; 
     border: 1px solid #ccc;
@@ -103,20 +101,11 @@
     font-size: 16px;
 }
 
-.description button {
-    width: 100px;
-    margin: 10px;
-    padding: 8px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.textarea {
+    height: 100px;
+
 }
 
-.description textarea {
-    height: 150px;
-    overflow-y: auto;
-}
-   
 .casts {
     display: flex;
     justify-content: center;
