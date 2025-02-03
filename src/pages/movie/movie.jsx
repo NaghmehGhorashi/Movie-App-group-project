@@ -42,11 +42,13 @@ function Movie() {
                 <Navbar />
                 <div className="container">
                     <div className={style.article}>
+                        
                         {article ? (
                             <>
                                 <div>
                                     <img src={article.poster_path} alt="poster_path" />
-                                </div>
+                                </div> 
+                           
                                 {!isEditing ? (
                                     <div className={style.description}>
                                         <div>
@@ -61,7 +63,7 @@ function Movie() {
                                         <div>
                                             <p>Overview : {article.overview}</p>
                                         </div>
-                                        <button onClick={() => setIsEditing(true)}>Edit</button>
+                                        <button onClick={() => setIsEditing(true)} className={style.button}>Edit</button>
                                     </div>
                                 ) : (
                                     <div className={style.description}>
