@@ -36,19 +36,23 @@ function Movie() {
         setIsEditing(false);
     };
 
+    // تابع برای محدود کردن متن description به دو جمله
+    const getShortDescription = (text) => {
+        const sentences = text.split('.'); // تقسیم متن به جملات
+        return sentences.slice(0, 2).join('.') + (sentences.length > 2 ? '...' : ''); // فقط دو جمله اول
+    };
+
     return (
         <Wrapper>
             <div>
                 <Navbar />
                 <div className="container">
                     <div className={style.article}>
-                        
                         {article ? (
                             <>
                                 <div>
                                     <img src={article.poster_path} alt="poster_path" />
-                                </div> 
-                           
+                                </div>
                                 {!isEditing ? (
                                     <div className={style.description}>
                                         <div>
@@ -61,7 +65,7 @@ function Movie() {
                                             <p>Rate : {article.vote_average}</p>
                                         </div>
                                         <div>
-                                            <p>Overview : {article.overview}</p>
+                                            <p>Overview : {getShortDescription(article.overview)}</p>
                                         </div>
                                         <button onClick={() => setIsEditing(true)} className={style.button}>Edit</button>
                                     </div>
@@ -98,19 +102,17 @@ function Movie() {
                         ) : (
                             <div className={style.placeholder}>Loading...</div>
                         )}
-                      {article && article.casts && article.casts.length > 0 ? (
-    <div className={style.casts}>
-        {article.casts.slice(0, 5).map((cast) => (
-            <div key={cast.id} className={style.cast}>
-                <img src={cast.profile_path} alt={cast.name} />
-            </div>
-        ))}
-    </div>
-) : (
-    <p>There is no photo for cast</p>
-)}
-
-                   
+                        {article && article.casts && article.casts.length > 0 ? (
+                            <div className={style.casts}>
+                                {article.casts.slice(0, 5).map((cast) => (
+                                    <div key={cast.id} className={style.cast}>
+                                        <img src={cast.profile_path} alt={cast.name} />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <p>There is no photo for cast</p>
+                        )}
                     </div>
                 </div>
             </div>

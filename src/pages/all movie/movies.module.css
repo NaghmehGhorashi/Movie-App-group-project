@@ -49,3 +49,23 @@
     height: 30px;
     margin-top: 5px;
 }
+
+@media (max-width: 768px) {
+    .articles {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        width: 100%;
+
+    }
+
+    .wrapper {
+        height: auto;
+        width: auto;
+    }
+
+
+}
