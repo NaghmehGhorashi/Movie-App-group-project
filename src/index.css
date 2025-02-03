@@ -36,3 +36,10 @@ a:hover {
 p {
   color: azure;
 }
+
+@media (max-width: 768px) {
+  body {
+    height: 100%;
+    width: 100%;
+  }
+}

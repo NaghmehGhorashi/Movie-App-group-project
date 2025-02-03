@@ -29,19 +29,25 @@ li {
     color: rgb(23, 23, 22);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
         align-items: center;
-    }
 
-    .navbar ul {
-        flex-direction: column;
         width: 100%;
+
+        gap: 15px;
+        margin-right: 5px;
+
+        p {
+            display: none;
+        }
+
+        ul {
+            margin-right: 40px;
+        }
     }
 
-    .navbar li {
-        padding-left: 0;
-        padding: 10px 0;
-    }
+
 }

@@ -137,11 +137,13 @@ textarea:focus {
 	background-color: var(--primary-color);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 	.container {
 		margin: 10px auto;
 		padding: 5px;
+		width: auto;
 	}
+
 
 	.wrapper {
 		padding: 10px;
@@ -157,13 +159,12 @@ textarea:focus {
 
 	input,
 	textarea,
-	.addButton,
-	.submitButton {
+	.addButton {
 		font-size: 14px;
+		width: 70%;
 	}
 
-	.addButton,
-	.submitButton {
+	.addButton {
 		padding: 8px 15px;
 	}
 }
