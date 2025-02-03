@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function Navbar() {
     return (
         <div className={style.navbar}>
-            <p>Movie Application</p>
+            <p>Film Vault</p>
             <ul className={style.link}>
                 <li><Link to="/" tabIndex="0" aria-label="Home Page"> Home </Link></li>
                 <li><Link to="/movies" tabIndex="0" aria-label="All Movies">All Movies</Link> </li>
