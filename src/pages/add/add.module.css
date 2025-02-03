@@ -19,13 +19,12 @@ body {
 h3,
 h2 {
 	font-weight: 200;
-	color: #250f2d;
+	color: #ffffff;
 }
 
 .container {
 	max-width: 800px;
 	margin: 20px auto;
-	padding: 15px;
 	transition: all var(--transition-speed) ease;
 	box-sizing: border-box;
 }
@@ -37,7 +36,6 @@ h2 {
 	box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
 	transition: all var(--transition-speed) ease;
 	padding: 20px;
-
 }
 
 .articles {
@@ -90,7 +88,7 @@ h2 {
 
 .addButton:hover
 .submitButton:hover {
-	background-color: var(--secondary-color);
+	background-color: #b961b3bf;
 }
 
 form {
@@ -107,7 +105,6 @@ textarea {
 	width: 90%;
 	padding: 8px;
 	margin-bottom: 8px;
-	margin-left: 40px;
 	border: 1px solid #ddd;
 	transition: all var(--transition-speed) ease;
 	border-radius: 4px;
@@ -139,7 +136,6 @@ textarea:focus {
 	cursor: pointer;
 	transition: all var(--transition-speed) ease;
 	border-radius: 4px;
-	margin-right: 20px;
 }
 
 .submitButton:hover {
