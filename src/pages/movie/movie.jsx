@@ -61,7 +61,7 @@ function Movie() {
                                         <div>
                                             <p>Overview : {article.overview}</p>
                                         </div>
-                                        <button onClick={() => setIsEditing(true)}>Edit</button>
+                                        <button onClick={() => setIsEditing(true)} className={style.button}>Edit</button>
                                     </div>
                                 ) : (
                                     <div className={style.description}>
