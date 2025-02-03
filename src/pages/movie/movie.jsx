@@ -45,7 +45,7 @@ function Movie() {
                         
                         {article ? (
                             <>
-                                <div>
+                                <div className={style.poster_path}>
                                     <img src={article.poster_path} alt="poster_path" />
                                 </div> 
                            

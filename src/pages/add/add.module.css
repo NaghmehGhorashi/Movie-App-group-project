@@ -12,6 +12,8 @@ body {
 	color: var(--text-color);
 	line-height: 1.6;
 	transition: background-color var(--transition-speed) ease;
+	margin: 0;
+	padding: 0;
 }
 
 h3,
@@ -23,8 +25,9 @@ h2 {
 .container {
 	max-width: 800px;
 	margin: 20px auto;
-	padding: 10px;
+	padding: 15px;
 	transition: all var(--transition-speed) ease;
+	box-sizing: border-box;
 }
 
 .wrapper {
@@ -33,7 +36,7 @@ h2 {
 	-moz-box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
 	box-shadow: inset 2px -2px 100px 27px rgba(255, 255, 255, 1);
 	transition: all var(--transition-speed) ease;
-	padding: 15px;
+	padding: 20px;
 
 }
 
@@ -70,25 +73,33 @@ h2 {
 
 }
 
-.addButton {
+.addButton, 
+.submitButton {
 	width: 100%;
 	background-color: var(--primary-color);
 	border: none;
 	color: white;
-	padding: 10px;
+	padding: 12px;
 	margin-top: 10px;
 	cursor: pointer;
 	transition: all var(--transition-speed) ease;
 	border-radius: 4px;
+	font-size: 16px;
+	text-align: center;
 }
 
-.addButton:hover {
+.addButton:hover
+.submitButton:hover {
 	background-color: var(--secondary-color);
 }
 
 form {
 	margin-top: 15px;
 	transition: margin var(--transition-speed) ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }
 
 input,
@@ -100,14 +111,19 @@ textarea {
 	border: 1px solid #ddd;
 	transition: all var(--transition-speed) ease;
 	border-radius: 4px;
-
-
+	font-size: 16px;
+	box-sizing: border-box;
 }
 
 textarea {
 	height: 70px;
 }
 
+.submitContainer {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
 
 input:focus,
 textarea:focus {
@@ -126,29 +142,23 @@ textarea:focus {
 	margin-right: 20px;
 }
 
-.submitContainer {
-	display: flex;
-	justify-content: flex-end;
-
-}
-
-
 .submitButton:hover {
-	background-color: var(--primary-color);
+	background-color: var(--primarw1y-color);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 	.container {
 		margin: 10px auto;
-		padding: 5px;
+		padding: 10px;
 	}
 
 	.wrapper {
-		padding: 10px;
+		padding: 15px;
 	}
 
 	.articles a {
 		width: 100%;
+		padding: 12px;
 	}
 
 	.title {
@@ -160,6 +170,7 @@ textarea:focus {
 	.addButton,
 	.submitButton {
 		font-size: 14px;
+		padding: 10px;
 	}
 
 	.addButton,
@@ -169,6 +180,10 @@ textarea:focus {
 }
 
 @media (max-width: 400px) {
+	.container {
+		padding: 10px;
+	}
+
 	.title {
 		font-size: 1rem;
 	}
@@ -177,6 +192,25 @@ textarea:focus {
 	textarea,
 	.addButton,
 	.submitButton {
-		font-size: 12px;
+		font-size: 14px;
+		padding: 8px;
 	}
+
+.submitContainer {
+	justify-content: center;
+}
+}
+
+@media (max-width: 400px) {
+.title {
+	font-size: 1rem;
+}
+
+input,
+textarea,
+.addButton,
+.submitButton {
+	font-size: 12px;
+	padding: 8px;
+}
 }
