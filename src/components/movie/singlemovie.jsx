@@ -1,4 +1,4 @@
-import React from 'react'
+
 import style from "./singlemovie.module.css"
 
 function Singlemovie(p) {

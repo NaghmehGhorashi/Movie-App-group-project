@@ -33,6 +33,7 @@
 }
 
 .description {
+    display: inline-block;
     flex-direction: column;
     width: 100%;
     text-align: center;
@@ -94,4 +95,9 @@
 
 .casts img:hover {
     transform: scale(1.1);
+}
+
+.detileCast {
+    display: flex;
+    flex-direction: column;
 }
