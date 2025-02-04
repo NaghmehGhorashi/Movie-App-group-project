@@ -49,76 +49,65 @@ function Movie() {
                 <div className="container">
                     <div className={style.article}>
                    
-                        {article ? (
-                            <>
-                                <div>
-                                    <img src={article.poster_path} alt="poster_path" />
+                       {article ? (
+    <div className={style.movieContainer}>
+     
+        <div className={style.posterContainer}>
+            <img src={article.poster_path} alt="poster_path" />
+        </div>
+
+      
+        <div className={style.detailsContainer}>
+            {!isEditing ? (
+                <>
+                    <div className={style.description}>
+                        <p>{article.original_title}</p>
+                        <p>Release Date: {article.release_date}</p>
+                        <p>Rate: {article.vote_average}</p>
+                        <p>Overview: {getShortDescription(article.overview)}</p>
+                        <button onClick={() => setIsEditing(true)} className={style.button}>Edit</button>
+                    </div>
+
+           
+                    {article.casts && article.casts.length > 0 ? (
+                        <div className={style.casts}>
+                            {article.casts.slice(0, 5).map((cast) => (
+                                <div key={cast.id} className={style.cast}>
+                                    <img src={cast.profile_path} alt={cast.name} />
                                 </div>
-                                       
+                            ))}
+                        </div>
+                    ) : (
+                        <p>There is no photo for cast</p>
+                    )}
+                </>
+            ) : (
+                <div className={style.description}>
+                    <label>Title:</label>
+                    <input
+                        type="text"
+                        name="original_title"
+                        value={editedArticle.original_title}
+                        onChange={handleInputChange}
+                        className={style.input}
+                    />
+                    <label>Description</label>
+                    <textarea
+                        name="overview"
+                        value={editedArticle.overview}
+                        onChange={handleInputChange}
+                        className={style.textarea}
+                    ></textarea>
+                    <button onClick={saveChanges} className={style.button}>Save</button>
+                    <button onClick={() => setIsEditing(false)} className={style.button}>Cancel</button>
+                </div>
+            )}
+        </div>
+    </div>
+) : (
+    <div className={style.placeholder}>Loading...</div>
+)}
 
-
-                                {!isEditing ? (
-
-                                    <div className={style.description}>
-                                        <div>
-                                            <p>{article.original_title}</p>
-                                        </div>
-                                        <div>
-                                            <p>Release Date : {article.release_date}</p>
-                                        </div>
-                                        <div>
-                                            <p>Rate : {article.vote_average}</p>
-                                        </div>
-                                        <div>
-                                            <p>Overview : {getShortDescription(article.overview)}</p>
-                                        </div>
-                                        <button onClick={() => setIsEditing(true)} className={style.button}>Edit</button>
-                                    </div>
-                                    
-                                ) : (
-                                    <div className={style.description}>
-                                        <div>
-                                            <label>Title :</label>
-                                            <input
-                                                type="text"
-                                                name="original_title"
-                                                value={editedArticle.original_title}
-                                                onChange={handleInputChange}
-                                                className={style.input}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label>Description</label>
-                                            <textarea
-                                                name="overview"
-                                                value={editedArticle.overview}
-                                                onChange={handleInputChange}
-                                                className={style.textarea}
-                                            ></textarea>
-                                        </div>
-                                        <button onClick={saveChanges} className={style.button}>
-                                            Save
-                                        </button>
-                                        <button onClick={() => setIsEditing(false)} className={style.button}>
-                                            Cancel
-                                        </button>
-                                    </div>
-                                )}
-                            </>
-                        ) : (
-                            <div className={style.placeholder}>Loading...</div>
-                        )}
-                        {article && article.casts && article.casts.length > 0 ? (
-                            <div className={style.casts}>
-                                {article.casts.slice(0, 5).map((cast) => (
-                                    <div key={cast.id} className={style.cast}>
-                                        <img src={cast.profile_path} alt={cast.name} />
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                            <p>There is no photo for cast</p>
-                        )}
                     </div>
                 </div>
             </div>
