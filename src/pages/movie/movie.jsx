@@ -36,10 +36,10 @@ function Movie() {
         setIsEditing(false);
     };
 
-    // تابع برای محدود کردن متن description به دو جمله
+  
     const getShortDescription = (text) => {
-        const sentences = text.split('.'); // تقسیم متن به جملات
-        return sentences.slice(0, 2).join('.') + (sentences.length > 2 ? '...' : ''); // فقط دو جمله اول
+        const sentences = text.split('.'); 
+        return sentences.slice(0, 2).join('.') + (sentences.length > 2 ? '...' : ''); 
     };
 
     return (
@@ -48,12 +48,17 @@ function Movie() {
                 <Navbar />
                 <div className="container">
                     <div className={style.article}>
+                   
                         {article ? (
                             <>
                                 <div>
                                     <img src={article.poster_path} alt="poster_path" />
                                 </div>
+                                       
+
+
                                 {!isEditing ? (
+
                                     <div className={style.description}>
                                         <div>
                                             <p>{article.original_title}</p>
@@ -69,6 +74,7 @@ function Movie() {
                                         </div>
                                         <button onClick={() => setIsEditing(true)} className={style.button}>Edit</button>
                                     </div>
+                                    
                                 ) : (
                                     <div className={style.description}>
                                         <div>
